@@ -1,0 +1,30 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+    asdaks
+    a ofjdıaksj
+    ajfıkoas
+*@
+
+@using CrmEntity.Concrete
+@model TblKategori
+
+
+<div class="row">
+    <form method="post">
+        <div class="mb-1">
+            <label class="form-label">Kategori Adı</label>
+            @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
+          
+        </div>
+        <div class="mb-1">
+            <label class="form-label">Özle Kod</label>
+            @Html.TextBoxFor(x => x.OzelKod, new { @class = "form-control" }) 
+        </div>
+        <div class="mb-1">
+            <label class="form-label">Ürün Rengi</label>
+            @Html.TextBoxFor(x => x.Renk, new { @class = "form-control" }) 
+        </div>
+        <button class="btn btn-primary btn-xs">Ürün Ekle</button>
+    </form>
+</div>

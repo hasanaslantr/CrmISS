@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace CrmEntity.Concrete
 {
     public class TblPersonel
     {
+        [Key]
         public int PersonelId { get; set; }
         public string PersonelKodu { get; set; } = string.Empty;
         public string PersonelAd { get; set; } = string.Empty;

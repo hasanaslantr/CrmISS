@@ -1,0 +1,43 @@
+﻿@using CrmEntity.Concrete
+@model List<TblKategori>
+ 
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Kategori İşlemleri</h3>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Product List</h4>
+                <table id="basic-datatable" class="table dt-responsive nowrap w-100 table-sm">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Kategori</th>
+                            <th>Özel Kod</th>
+                            <th>Renk</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.KategoriId</td>
+                                <td>@item.KategoriAd</td>
+                                <td>@item.OzelKod</td>
+                                <td>@item.Renk</td>
+                                <td> <a href="" class="btn btn-danger btn-xs">Sil</a></td>
+                                <td><a href="" class="btn btn-success btn-xs">Güncelle</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div> <!-- end card body-->
+        </div> <!-- end card -->
+    </div><!-- end col-->
+</div>

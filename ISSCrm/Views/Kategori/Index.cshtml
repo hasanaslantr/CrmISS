@@ -1,0 +1,131 @@
+﻿@using CrmEntity.Concrete
+@model List<TblKategori>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Panel/_Panel.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="content">
+
+        <!-- Kokegori Listesi -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="row">
+                                <div class="col-12" id="kategorilistesi">
+                                    <button data-bs-toggle="modal" data-bs-target="#yenikategori" class="btn btn-primary waves-effect waves-light btn-xs"><span class="btn-label"><i class="mdi mdi-check-all"></i></span>Yeni Kategori </button>
+                                    <div class="table-responsive">
+
+                                        <table id="KategoriMain" class="table table-centered dt-responsive nowrap w-100 table-sm">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Kategori</th>
+                                                    <th>Özel Kod</th>
+                                                    <th>Renk</th>
+                                                    <th>İşlemler</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr>
+                                                        <td>@item.KategoriId</td>
+                                                        <td>@item.KategoriAd</td>
+                                                        <td>@item.OzelKod</td>
+                                                        <td>@item.Renk</td>
+                                                        <td>
+                                                            <a href="" class="btn btn-danger btn-xs">Sil</a>
+                                                            <a href="" class="btn btn-success btn-xs">Güncelle</a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kategori Ekleme işlemi-->
+        <div id="yenikategori" class="modal fade bg-soft-primary" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="standard-modalLabel">Yeni Kategori Oluştur</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form method="POST" id="YeniKategoriEkle">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12">
+
+                                    @await Html.PartialAsync("~/views/kategori/kategoriekle.cshtml")
+ 
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+
+
+                                <button type="submit" onclick="KategoriEkle()" class="btn btn-primary waves-effect waves-light btn-xs"><span class="btn-label"><i class="mdi mdi-check-all"></i></span>Kaydet</button>
+                                <button type="button" class="btn btn-danger waves-effect btn-xs" data-bs-dismiss="modal">Vazgeç</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<script>
+
+
+
+
+
+    function KategoriEkle() {
+
+        $("form#YeniKategoriEkle").submit(function () {
+            var KATEGORI = $('#Kategori').val();
+
+
+            alert(KATEGORI);
+
+            if (KATEGORI != "") {
+                $.ajax({
+                    type: "POST",
+                    url: "/Kategori/KategoriEkle",
+                    data: "KATEGORI=" + KATEGORI,
+                    success: function () {
+                        Swal.fire(
+                            'İşleminiz Başarılı!',
+                            'Yeni Kategori Kaydınız',
+                            'success',
+                        );
+                    }
+                });
+                return false;
+            } else {
+                alert("Lütfen Kategori Adı Giriniz... !");
+                return false;
+            }
+        });
+    }
+
+
+</script>
