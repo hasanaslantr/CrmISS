@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="wwwroot\assets\libs\datatables.net-bs5\node_modules\datatables.net\License.txt" />
     <Content Include="wwwroot\assets\libs\datatables.net-bs5\node_modules\jquery\AUTHORS.txt" />
     <Content Include="wwwroot\assets\libs\datatables.net-bs5\node_modules\jquery\external\sizzle\LICENSE.txt" />
@@ -76,11 +77,14 @@
   </ItemGroup>
 
   <ItemGroup>
+=======
+>>>>>>> a7cb6e68f31ea7bb5ad72dcc1bbe58300d9e2d68
     <ProjectReference Include="..\CrmBusiness\CrmBusiness.csproj" />
     <ProjectReference Include="..\CrmDataAccess\CrmDataAccess.csproj" />
     <ProjectReference Include="..\CrmEntity\CrmEntity.csproj" />
   </ItemGroup>
 
+<<<<<<< HEAD
   <ItemGroup>
     <None Include="wwwroot\assets\libs\datatables.net-bs5\node_modules\datatables.net\js\jquery.dataTables.min.js" />
     <None Include="wwwroot\assets\libs\datatables.net-bs5\node_modules\jquery\external\sizzle\sizzle.min.js" />
@@ -277,4 +281,6 @@
     <Folder Include="wwwroot\assets\libs\waypoints\test\" />
   </ItemGroup>
 
+=======
+>>>>>>> a7cb6e68f31ea7bb5ad72dcc1bbe58300d9e2d68
 </Project>

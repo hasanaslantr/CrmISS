@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrmDataAccess", "..\CrmData
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrmBusiness", "..\CrmBusiness\CrmBusiness.csproj", "{2050FCEB-00C5-40FE-B983-5D8855D705A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISSCrm", "..\ISSCrm\ISSCrm.csproj", "{1C0CD4AF-D562-4A77-A5C5-E04A2C064543}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ISSCrm", "..\ISSCrm\ISSCrm.csproj", "{1C0CD4AF-D562-4A77-A5C5-E04A2C064543}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
