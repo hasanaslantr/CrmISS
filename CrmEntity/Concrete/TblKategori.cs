@@ -13,7 +13,7 @@ namespace CrmEntity.Concrete
         [Key]
         public int KategoriId { get; set; }  
         public string KategoriAd { get; set; } = string.Empty;
-        public string OzelKod { get; set; } = string.Empty;
+        public  string  OzelKod { get; set; } = string.Empty;
         public string Renk { get; set; } = string.Empty;
     }
 }

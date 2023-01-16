@@ -9,5 +9,6 @@ namespace CrmDataAccess.Abstract
 {
     public interface IKategori : IGEnericDal<TblKategori>
     {
+        List<TblKategori> GetList();
     }
 }

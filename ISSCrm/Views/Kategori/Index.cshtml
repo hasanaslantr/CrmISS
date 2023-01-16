@@ -17,7 +17,11 @@
                         <div class="row">
                             <div class="row">
                                 <div class="col-12" id="kategorilistesi">
-                                    <button data-bs-toggle="modal" data-bs-target="#yenikategori" class="btn btn-primary waves-effect waves-light btn-xs"><span class="btn-label"><i class="mdi mdi-check-all"></i></span>Yeni Kategori </button>
+                                    <a href="/Kategori/KategoriEkle"   class="btn btn-primary waves-effect waves-light btn-xs">
+                                        <span class="btn-label"><i class="mdi mdi-check-all"></i></span>Yeni Kategori
+                                    </a>
+                                    <br/>
+                                    <br/>
                                     <div class="table-responsive">
 
                                         <table id="KategoriMain" class="table table-centered dt-responsive nowrap w-100 table-sm">
@@ -40,8 +44,8 @@
                                                         <td>@item.OzelKod</td>
                                                         <td>@item.Renk</td>
                                                         <td>
-                                                            <a href="" class="btn btn-danger btn-xs">Sil</a>
-                                                            <a href="" class="btn btn-success btn-xs">Güncelle</a>
+                                                            <a href="/Kategori/KategoriSil/@item.KategoriId" class="btn btn-danger btn-xs">Sil</a>
+                                                            <a href="/Kategori/KategoriGuncelle/@item.KategoriId" class="btn btn-success btn-xs">Güncelle</a>
                                                         </td>
                                                     </tr>
                                                 }
@@ -57,7 +61,8 @@
             </div>
         </div>
 
-        <!-- Kategori Ekleme işlemi-->
+
+        <!--Yeni Kategori Oluştur-->
         <div id="yenikategori" class="modal fade bg-soft-primary" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -65,19 +70,22 @@
                         <h4 class="modal-title" id="standard-modalLabel">Yeni Kategori Oluştur</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form method="POST" id="YeniKategoriEkle">
+                    <form method="POST" id="aa">
                         <div class="modal-body">
                             <div class="row">
-                                <div class="col-12">
+                                <div class="mb-1">
+                                    <input id="Kategori" class="form-control" placeholder="Kategori Giriniz ..." type="text">
+                                </div>
+                                <div class="mb-1">
 
-                                    @await Html.PartialAsync("~/views/kategori/kategoriekle.cshtml")
- 
+                                    <input id="OzelKod" class="form-control" placeholder="Özel Kod Giriniz ..." type="text">
+                                </div>
+                                <div class="mb-1">
+                                    <input id="Renk" class="form-control" placeholder="Renk Giriniz ..." type="text">
                                 </div>
                             </div>
                             <div class="modal-footer">
-
-
-                                <button type="submit" onclick="KategoriEkle()" class="btn btn-primary waves-effect waves-light btn-xs"><span class="btn-label"><i class="mdi mdi-check-all"></i></span>Kaydet</button>
+                                <button type="submit" id="btnKategoriEkle" class="btn btn-primary waves-effect waves-light btn-xs"><span class="btn-label"><i class="mdi mdi-check-all"></i></span>Kaydet</button>
                                 <button type="button" class="btn btn-danger waves-effect btn-xs" data-bs-dismiss="modal">Vazgeç</button>
                             </div>
                         </div>
@@ -86,22 +94,15 @@
             </div>
         </div>
 
+
     </div>
 </div>
 
-
-
-
 <script>
-
-
-
-
-
     function KategoriEkle() {
 
         $("form#YeniKategoriEkle").submit(function () {
-            var KATEGORI = $('#Kategori').val();
+            //  var KATEGORI = $('#Kategori').val();
 
 
             alert(KATEGORI);
@@ -126,6 +127,11 @@
             }
         });
     }
-
-
 </script>
+
+
+
+
+
+
+

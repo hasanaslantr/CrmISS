@@ -11,38 +11,21 @@ namespace CrmBusiness.Concrete
 {
     public class KategoriManger : IKategoriService
     {
-        IKategori _Kategori;
-        public KategoriManger(IKategori KategoriDal)
+        IKategori _KategoriDal;
+
+        public KategoriManger(IKategori kategoriDal)
         {
-            _Kategori = KategoriDal;
+            _KategoriDal = kategoriDal;
         }
 
-        public void TDelete(TblKategori t)
-        {
-            _Kategori.Delete(t);
-        }
+        public void TDelete(TblKategori t) { _KategoriDal.Delete(t); }
 
-        public TblKategori TGetById(int id)
-        {
-            return _Kategori.GetById(id);
-        }
+        public TblKategori TGetById(int id) { return _KategoriDal.GetById(id); }
 
-        public List<TblKategori> TGetList()
-        {
-           // return _Kategori.GetList();
-           throw new NotImplementedException();
-        }
+        public List<TblKategori> TGetList() { return _KategoriDal.GetList(); }
 
-       
+        public void TInsert(TblKategori t) { _KategoriDal.Insert(t); }
 
-        public void TInsert(TblKategori t)
-        {
-            _Kategori.Insert(t);
-        }
-
-        public void TUpdate(TblKategori t)
-        {
-            _Kategori.Update(t);
-        }
+        public void TUpdate(TblKategori t) { _KategoriDal.Update(t); }
     }
 }

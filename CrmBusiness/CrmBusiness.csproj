@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="FluentValidation\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CrmDataAccess\CrmDataAccess.csproj" />
     <ProjectReference Include="..\CrmEntity\CrmEntity.csproj" />
   </ItemGroup>

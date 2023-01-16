@@ -1,5 +1,6 @@
-﻿@{
-    ViewData["Title"] = "KategoriEkle";
+﻿
+@{
+    ViewData["Title"] = "KategoriGuncelle";
     Layout = "~/Views/Panel/_Panel.cshtml";
 }
 
@@ -10,14 +11,14 @@
         <div class="embed-responsive">
             <div class="row">
                 <div class="card">
-                    <h4 class="text-danger text-center">Kategori Ekle</h4>
+                    <h4 class="text-danger text-center">Kategori Güncelle</h4>
                     <div class="card-body">
 
                         <form method="post">
                             <div class="mb-1">
                                 <label class="form-label">Kategori Adı</label>
                                 @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control form-control-sm" })
-                                <p class="text-danger"> @Html.ValidationMessageFor(x => x.KategoriAd) </p> 
+                                <p class="text-danger"> @Html.ValidationMessageFor(x => x.KategoriAd) </p>
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Özle Kod</label>
@@ -28,7 +29,7 @@
                                 @Html.TextBoxFor(x => x.Renk, new { @class = "form-control form-control-sm" })
                             </div>
                             <div class="mb-1">
-                                <button class="btn btn-primary btn-xs">Kategori Ekle Ekle</button>
+                                <button class="btn btn-primary btn-xs">Kategori Güncelle</button>
                             </div>
                         </form>
                     </div>

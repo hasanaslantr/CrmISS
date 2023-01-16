@@ -1,5 +1,6 @@
 ﻿using CrmDataAccess.Abstract;
 using CrmDataAccess.Concrete;
+using CrmEntity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,37 +11,41 @@ namespace CrmDataAccess.Repository
 {
     public class GenericRepository<T> : IGEnericDal<T> where T : class
     {
+
+
         public void Delete(T t)
         {
-            using var db = new CrmDbContext();
-            db.Remove(t);
-            db.SaveChangesAsync();
+            using var c = new CrmDbContext();
+            c.Remove(t);
+            c.SaveChanges();
         }
-
         public T GetById(int id)
         {
-            using var db = new CrmDbContext();
-            return db.Set<T>().Find(id);
+            using var c = new CrmDbContext();
+            return c.Set<T>().Find(id);
         }
-
         public List<T> GetList(T t)
         {
-            using var db = new CrmDbContext();
-            return db.Set<T>().ToList();
+            using var c = new CrmDbContext();
+            return c.Set<T>().ToList();
         }
-
+        public List<T> GetList()
+        {
+            using var c = new CrmDbContext();
+            return c.Set<T>().ToList();
+        }
         public void Insert(T t)
         {
-            using var db = new CrmDbContext()  ;
-            db.AddAsync(t);
-            db.SaveChangesAsync();
+            using var c = new CrmDbContext();
+            c.Add(t);
+            c.SaveChanges();
         }
 
         public void Update(T t)
         {
-            using var db = new CrmDbContext();
-            db.Update(t);
-            db.SaveChangesAsync();
+            using var c = new CrmDbContext();
+            c.Update(t);
+            c.SaveChanges();
         }
     }
 }

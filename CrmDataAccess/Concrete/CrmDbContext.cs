@@ -12,8 +12,8 @@ namespace CrmDataAccess.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("SERVER=DESKTOP-EPQ611O\\SQLEXPRESS;DATABASE=AsyncCrm; INTEGRATED SECURITY= TRUE");
-        }  
+            optionsBuilder.UseSqlServer("SERVER=DESKTOP-EPQ611O\\SQLEXPRESS;DATABASE=AsyncCrm; INTEGRATED SECURITY= TRUE; MultipleActiveResultSets=True");
+        }
         public DbSet<TblCari> Cari { get; set; } = null!;
         public DbSet<TblCariYetkili> CariYetkili { get; set; } = null!;
         public DbSet<TblDestek> Destek { get; set; } = null!;

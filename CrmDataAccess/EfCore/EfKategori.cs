@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace CrmDataAccess.EfCore
 {
-    public class EfKategori:GenericRepository<TblKategori>,IKategori
+    public class EfKategori : GenericRepository<TblKategori>, IKategori
     {
+        
     }
 }
